@@ -1,7 +1,25 @@
-<!-- app/views/static_pages/home.html.erb -->
-
 <div style="text-align: center;">
   <h1>Bienvenue sur EventBriteProject</h1>
-  <p>Parcourez les dernières nouveautés en termes d'événements :</p>
-  <p>Une petite surprise se cache, sauras-tu la trouver !</p>
+ 
+  <p>Rejoins-nous vite, une petite surprise t'attend !</p>
+  <p>sauras-tu la trouver !</p> 
+  <br>
+  <h2>Parcourez les dernières nouveautés :</h2>
+</div>
+
+<div class="container">
+  <div class="row">
+    <% @events.each do |event| %>
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title"><%= event.title %></h5>
+            <p class="card-text"><%= event.description %></p>
+            <p class="card-text">Créé par <%= event.admin.first_name if event.admin %></p>
+            <a href="<%= event_path(event) %>" class="btn btn-primary">Voir plus</a>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>

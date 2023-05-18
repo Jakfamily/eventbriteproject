@@ -1,10 +1,22 @@
-<p style="color: green"><%= notice %></p>
-
-<%= render @event %>
-
-<div>
-  <%= link_to "Edit this event", edit_event_path(@event) %> |
-  <%= link_to "Back to events", events_path %>
-
-  <%= button_to "Destroy this event", @event, method: :delete %>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <p style="color: green; text-align: center;"><%= notice %></p>
+      <%= render @event %>
+      <br>
+      <br>
+      <div class="text-center">
+        <% if current_user && current_user.id == @event.admin_id %>
+          <%= link_to "Edit this event", edit_event_path(@event), class: "btn btn-primary" %> |
+        <% end %>
+        <%= link_to "Back to events", events_path, class: "btn btn-primary" %>
+        <br>
+        <br>
+        <% if current_user && current_user.id == @event.admin_id %>
+          <%= button_to "Destroy this event", @event, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
+

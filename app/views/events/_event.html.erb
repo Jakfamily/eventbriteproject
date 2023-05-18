@@ -1,22 +1,46 @@
-<div id="<%= dom_id event %>">
-  <p>
-    <strong>Title:</strong>
-    <%= event.title %>
-  </p>
-
-  <p>
-    <strong>Date:</strong>
-    <%= event.start_datetime.to_date %>
-  </p>
-
-  <p>
-    <strong>Location:</strong>
-    <%= event.location %>
-  </p>
-
-  <p>
-    <strong>Description:</strong>
-    <%= event.description %>
-  </p>
-
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6"> 
+      <h2 class="card-title text-center">Event Details</h2>
+      <br>
+      <div class="card">
+        <div class="card-body text-center">
+          <div class="event-details">
+            <p>
+              <strong>Title:</strong>
+              <%= event.title %>
+            </p>
+            <p>
+              <strong>Date:</strong>
+              <%= event.start_datetime.to_date %>
+            </p>
+            <p>
+              <strong>Location:</strong>
+              <%= event.location %>
+            </p>
+            <p>
+              <strong>Description:</strong>
+              <%= event.description %>
+            </p>
+            <p>
+              <strong>Duration:</strong>
+              <%= event.duration %> hours
+            </p>
+           <p>
+              <strong>Price:</strong>
+              <%= number_to_currency(event.price, unit: "€") %>
+          </p>
+            <p>
+              <strong>Created by:</strong>
+              <% if event.admin.present? %>
+                <%= event.admin.first_name %>
+              <% else %>
+                User not available
+              <% end %>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

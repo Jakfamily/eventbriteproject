@@ -1,14 +1,25 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Events</h1>
-
-<div id="events">
-  <% @events.each do |event| %>
-    <%= render event %>
-    <p>
-      <%= link_to "Show this event", event %>
-    </p>
-  <% end %>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <p style="color: green; text-align: center;"><%= notice %></p>
+      <h1 class="text-center">Events</h1>
+      <div id="events">
+        <% @events.each do |event| %>
+          <div class="card mb-3">
+            <div class="card-body">
+              <%= render event %>
+              <br>
+              <div class="text-center">
+                <%= link_to "Show this event", event, class: "btn btn-primary" %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <div class="text-center">
+         <%= link_to "Accueil", root_path, class: "btn btn-primary" %>
+        <%= link_to "New event", new_event_path, class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
 </div>
-
-<%= link_to "New event", new_event_path %>

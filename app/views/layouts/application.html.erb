@@ -37,10 +37,12 @@
         </ul>
       <% end %>
     </nav>
-
+    
+    <div class="container">
       <p class="notice text-center"><%= notice %></p>
       <p class="alert text-center"><%= alert %></p>
       <%= yield %>
+    </div>
 
     <footer>
       <div class="container">
@@ -51,5 +53,6 @@
         <% end %>
       </div>
     </footer>
+
   </body>
 </html>
