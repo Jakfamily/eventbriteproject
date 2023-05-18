@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :attendances
+  resources :events
   root 'static_pages#index'
 
   # Déconnexion des utilisateurs

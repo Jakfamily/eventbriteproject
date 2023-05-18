@@ -17,7 +17,10 @@
       <% if user_signed_in? %>
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-          <%= link_to "Sign out", destroy_user_session_path, method: :delete, data: {turbo_method: :delete}, class: "nav-link" %>
+            <%= link_to "Create New Event", new_event_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Sign out", destroy_user_session_path, method: :delete, data: {turbo_method: :delete}, class: "nav-link" %>
           </li>
           <li class="nav-item">
             <%= link_to "Edit email / password", edit_user_registration_path, class: "nav-link" %>
@@ -44,7 +47,7 @@
         <hr class="my-4">
         <p class="text-center">Created by <a href="https://github.com/Jakfamily">Jean-Baptiste</a></p>
         <% if user_signed_in? %>
-        <%= link_to "Bouton Secret", secret_path, class: "btn btn-transparent text-white" %>
+          <%= link_to "Bouton Secret", secret_path, class: "btn btn-transparent text-white" %>
         <% end %>
       </div>
     </footer>
