@@ -30,14 +30,15 @@
               <strong>Price:</strong>
               <%= number_to_currency(event.price, unit: "€") %>
           </p>
-            <p>
-              <strong>Created by:</strong>
-              <% if event.admin.present? %>
-                <%= event.admin.first_name %>
-              <% else %>
-                User not available
-              <% end %>
-            </p>
+          <p>
+            <strong>Created by:</strong>
+            <% if event.admin.present? %>
+            <%= link_to event.admin.first_name, author_path(event.admin) %>
+            <% else %>
+            User not available
+            <% end %>
+          </p>
+
           </div>
         </div>
       </div>

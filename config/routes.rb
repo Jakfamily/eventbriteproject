@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   resources :attendances
   resources :events
   root 'static_pages#index'
+  get 'authors/:id', to: 'authors#show', as: 'author'
+
 
   # Déconnexion des utilisateurs
   devise_scope :user do
