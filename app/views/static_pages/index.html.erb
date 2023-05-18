@@ -6,7 +6,7 @@
   <br>
   <h2>Parcourez les dernières nouveautés :</h2>
 </div>
-
+<br>
 <div class="container">
   <div class="row">
     <% @events.each do |event| %>
@@ -15,7 +15,7 @@
           <div class="card-body">
             <h5 class="card-title"><%= event.title %></h5>
             <p class="card-text"><%= event.description %></p>
-            <p class="card-text">Créé par <%= event.admin.first_name if event.admin %></p>
+            <p class="card-text">Created by <%= event.admin.first_name if event.admin %></p>
             <a href="<%= event_path(event) %>" class="btn btn-primary">Voir plus</a>
           </div>
         </div>

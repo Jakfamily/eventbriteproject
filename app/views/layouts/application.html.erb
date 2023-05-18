@@ -11,32 +11,35 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <%= link_to "EventBriteProject", root_path, class: "navbar-brand" %>
+   <div class="container">
+  <header class="d-flex flex-wrap justify-content-between py-3 mb-4 border-bottom">
+    <a href="<%= root_path %>" class="d-flex align-items-center mb-3 mb-md-0 text-dark text-decoration-none">
+      <span class="fs-4 text-primary" style="font-weight: 900">EventBriteProject</span>
+    </a>
 
+    <ul class="nav nav-pills">
       <% if user_signed_in? %>
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <%= link_to "Create New Event", new_event_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Sign out", destroy_user_session_path, method: :delete, data: {turbo_method: :delete}, class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Edit email / password", edit_user_registration_path, class: "nav-link" %>
-          </li>
-        </ul>
+        <li class="nav-item">
+          <%= link_to "Create New Event", new_event_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Edit email / password", edit_user_registration_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Sign out", destroy_user_session_path, method: :delete, data: {turbo_method: :delete}, class: "nav-link" %>
+        </li>
       <% else %>
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <%= link_to "Sign in", new_user_session_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %>
-          </li>
-        </ul>
+        <li class="nav-item">
+          <%= link_to "Sign in", new_user_session_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %>
+        </li>
       <% end %>
-    </nav>
+    </ul>
+  </header>
+</div>
+
     
     <div class="container">
       <p class="notice text-center"><%= notice %></p>
