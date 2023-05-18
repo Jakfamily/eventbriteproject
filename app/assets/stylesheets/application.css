@@ -1,0 +1,18 @@
+* {
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #f8f8f8; /* Couleur de fond du footer */
+    padding: 20px;
+    text-align: center;
+}
+.text-transparent {
+    color: transparent;
+  }

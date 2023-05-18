@@ -3,6 +3,7 @@ class StaticPagesController < ApplicationController
   end
 
   def secret
+    @user = current_user
     if user_signed_in?
       # Code pour la page secret accessible uniquement aux utilisateurs connectés
     else

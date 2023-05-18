@@ -19,4 +19,6 @@ Rails.application.routes.draw do
   unauthenticated do
     root 'static_pages#index', as: :unauthenticated_root
   end
+  get '/secret', to: 'static_pages#secret', as: 'secret'
+
 end
