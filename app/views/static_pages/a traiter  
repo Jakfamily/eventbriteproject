@@ -1,0 +1,10 @@
+
+
+<% if current_user%>
+ <%logged_in_user = current_user.email %>
+ <%= link_to "Sign out", destroy_user_session_path, method: :delete, data: {turbo_method: :delete}, class: "btn btn-danger" %>
+ <%= link_to "Edit email / password", edit_user_registration_path, class: "btn btn-primary" %>
+<% else %>
+ <%= link_to "Sign in", new_user_session_path, class: "btn btn-primary" %>
+ <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary" %>
+<% end %>
