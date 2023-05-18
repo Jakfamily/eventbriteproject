@@ -43,7 +43,9 @@
       <div class="container">
         <hr class="my-4">
         <p class="text-center">Created by <a href="https://github.com/Jakfamily">Jean-Baptiste</a></p>
-        <%= link_to "Bouton Secret", secret_path, class: "btn btn-transparent text-transparent" %>
+        <% if user_signed_in? %>
+        <%= link_to "Bouton Secret", secret_path, class: "btn btn-transparent text-white" %>
+        <% end %>
       </div>
     </footer>
   </body>
