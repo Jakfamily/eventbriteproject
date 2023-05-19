@@ -26,19 +26,19 @@
               <strong>Duration:</strong>
               <%= event.duration %> hours
             </p>
-           <p>
+            <p>
               <strong>Price:</strong>
               <%= number_to_currency(event.price, unit: "€") %>
-          </p>
-          <p>
-            <strong>Created by:</strong>
-            <% if event.admin.present? %>
-            <%= link_to event.admin.first_name, author_path(event.admin) %>
-            <% else %>
-            User not available
-            <% end %>
-          </p>
-
+            </p>
+            <p>
+              <strong>Created by:</strong>
+              <% if event.admin.present? %>
+                <%= link_to event.admin.first_name, author_path(event.admin) %>
+              <% else %>
+                User not available
+              <% end %>
+            </p>
+            <%= button_to "Passer commande (#{number_to_currency(event.price, unit: "€")})", checkout_create_path(total: event.price), class: "btn btn-primary", data: {turbo: false} %>
           </div>
         </div>
       </div>
