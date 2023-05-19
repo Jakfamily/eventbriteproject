@@ -1,11 +1,17 @@
 class ApplicationController < ActionController::Base
-    before_action :configure_devise_parameters, if: :devise_controller?
+  # Avant d'exécuter une action d'un contrôleur Devise, exécute la méthode `configure_devise_parameters`
+  before_action :configure_devise_parameters, if: :devise_controller?
 
+  # Méthode pour configurer les paramètres Devise
   def configure_devise_parameters
-    devise_parameter_sanitizer.permit(:sign_up) {|u| u.permit(:first_name, :last_name, :description, :email, :password, :password_confirmation)}
-    devise_parameter_sanitizer.permit(:account_update) {|u| u.permit(:first_name, :last_name, :description, :email, :password, :password_confirmation)}
+    # Permet les paramètres spécifiés lors de l'inscription (sign_up)
+    devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:first_name, :last_name, :description, :email, :password, :password_confirmation) }
+    
+    # Permet les paramètres spécifiés lors de la mise à jour du compte (account_update)
+    devise_parameter_sanitizer.permit(:account_update) { |u| u.permit(:first_name, :last_name, :description, :email, :password, :password_confirmation) }
   end
 
+  # Méthode pour obtenir le prénom de l'utilisateur
   def user_first_name
     first_name
   end

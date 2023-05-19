@@ -1,28 +1,32 @@
 class EventsController < ApplicationController
   before_action :set_event, only: %i[ show edit update destroy ]
-  
 
   # GET /events or /events.json
   def index
+    # Récupérer tous les événements
     @event = Event.all
   end
 
   # GET /events/1 or /events/1.json
   def show
+    # Récupérer l'événement spécifique
   end
 
   # GET /events/new
   def new
+    # Créer une nouvelle instance d'événement
     @event = Event.new
   end
 
   # GET /events/1/edit
   def edit
+    # Récupérer l'événement spécifique pour l'édition
     @event = Event.find(params[:id])
   end
 
   # POST /events or /events.json
   def create
+    # Créer un nouvel événement avec les paramètres fournis
     @event = Event.new(event_params)
     @event.admin = current_user
   
@@ -36,14 +40,10 @@ class EventsController < ApplicationController
       end
     end
   end
-  
-  
-  
- 
+
   # PATCH/PUT /events/1 or /events/1.json
   def update
-    @event = Event.find(params[:id])
-    # Mettre à jour les détails de l'événement
+    # Mettre à jour les détails de l'événement avec les paramètres fournis
     redirect_to event_path(@event), notice: "L'événement a été mis à jour avec succès."
     respond_to do |format|
       if @event.update(event_params)
@@ -58,6 +58,7 @@ class EventsController < ApplicationController
 
   # DELETE /events/1 or /events/1.json
   def destroy
+    # Supprimer l'événement spécifié
     @event.destroy
 
     respond_to do |format|
@@ -67,14 +68,15 @@ class EventsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+    # Utiliser des rappels pour partager la configuration commune ou les contraintes entre les actions.
     def set_event
+      # Trouver l'événement spécifié
       @event = Event.find(params[:id])
     end
 
     def event_params
+      # Paramètres autorisés pour la création ou la mise à jour de l'événement
       params.require(:event).permit(:title, :start_datetime, :duration, :location, :description, :price)
     end
-    
-
 end
+
