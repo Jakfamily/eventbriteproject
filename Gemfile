@@ -81,3 +81,5 @@ gem "letter_opener", "~> 1.7"
 gem "dotenv", "~> 2.8"
 
 gem "stripe", "~> 8.5"
+
+gem "activestorage", "~> 7.0"

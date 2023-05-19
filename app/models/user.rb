@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :attendances
   has_many :events, through: :attendances
   has_many :created_events, class_name: 'Event', foreign_key: 'admin_id'
+  has_one_attached :avatar
        
   validates :email, presence: true
   validates :encrypted_password, presence: true
