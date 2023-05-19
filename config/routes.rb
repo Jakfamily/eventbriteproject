@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   resources :attendances
   resources :events
+  resources :events do
+    resources :attendances, only: [:index]
+  end
+
   root 'static_pages#index'
   get 'authors/:id', to: 'authors#show', as: 'author'
 

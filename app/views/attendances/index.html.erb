@@ -1,14 +1,12 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Attendances</h1>
-
-<div id="attendances">
+<div class="text-center">
+  <h1>Liste des invités à l'événement : <%= @event.title %></h1>
+  <!-- Afficher la liste des participants à l'événement -->
   <% @attendances.each do |attendance| %>
-    <%= render attendance %>
-    <p>
-      <%= link_to "Show this attendance", attendance %>
-    </p>
+    <%= attendance.user.first_name %> <%= attendance.user.last_name %><br>
   <% end %>
+  <%= link_to "Modifier l'événement", edit_event_path(@event), class: "mx-auto" if current_user == @event.admin %>
+  <br>
+  <div class="text-center">
+    <%= link_to "Show this event", @event, class: "btn btn-primary" %>
+  </div>
 </div>
-
-<%= link_to "New attendance", new_attendance_path %>

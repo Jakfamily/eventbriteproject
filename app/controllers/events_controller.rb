@@ -1,9 +1,10 @@
 class EventsController < ApplicationController
   before_action :set_event, only: %i[ show edit update destroy ]
+  
 
   # GET /events or /events.json
   def index
-    @events = Event.all
+    @event = Event.all
   end
 
   # GET /events/1 or /events/1.json
@@ -17,6 +18,7 @@ class EventsController < ApplicationController
 
   # GET /events/1/edit
   def edit
+    @event = Event.find(params[:id])
   end
 
   # POST /events or /events.json
@@ -40,6 +42,9 @@ class EventsController < ApplicationController
  
   # PATCH/PUT /events/1 or /events/1.json
   def update
+    @event = Event.find(params[:id])
+    # Mettre à jour les détails de l'événement
+    redirect_to event_path(@event), notice: "L'événement a été mis à jour avec succès."
     respond_to do |format|
       if @event.update(event_params)
         format.html { redirect_to event_url(@event), notice: "Event was successfully updated." }

@@ -5,14 +5,14 @@
       <h1 class="text-center">Events</h1>
       <br>
       <div class="text-center">
-         <%= link_to "Home", root_path, class: "btn btn-primary" %>
+        <%= link_to "Retour à l'accueil", root_path, class: "btn btn-primary" %>
         <% if user_signed_in? %>
         <%= link_to "New event", new_event_path, class: "btn btn-primary" %>
         <% end %>
       </div>
       <br>
       <div id="events">
-        <% @events.each do |event| %>
+        <% @event.each do |event| %>
           <div class="card mb-3">
             <div class="card-body">
               <%= render event %>

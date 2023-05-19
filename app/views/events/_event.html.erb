@@ -38,7 +38,11 @@
                 User not available
               <% end %>
             </p>
-            <%= button_to "Passer commande (#{number_to_currency(event.price, unit: "€")})", checkout_create_path(total: event.price), class: "btn btn-primary", data: {turbo: false} %>
+           <div class="text-center">
+              <%= button_to "Passer commande (#{number_to_currency(event.price, unit: "€")})", checkout_create_path(total: event.price), class: "btn btn-primary", data: {turbo: false} %>
+              <br>
+              <%= link_to "Voir les participations", event_attendances_path(@event), class: "btn btn-primary" %>
+          </div>
           </div>
         </div>
       </div>
