@@ -1,24 +1,14 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# EventBriteProject
+Eventbriteproject est une plateforme en ligne qui permet aux organisateurs d'événements de créer, de promouvoir et de gérer des événements de toutes sortes, tels que des conférences, des concerts, des festivals, des ateliers et bien d'autres.
 
-Things you may want to cover:
 
-* Ruby version
 
-* System dependencies
+## Authors
 
-* Configuration
+- [@Jakfamily](https://github.com/Jakfamily)
 
-* Database creation
 
-* Database initialization
+## 🚀 About Me
+I'm a student to the hacking project 
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
