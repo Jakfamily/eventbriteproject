@@ -36,4 +36,12 @@ Rails.application.routes.draw do
     get 'success', to: 'checkout#success', as: 'checkout_success'
     get 'cancel', to: 'checkout#cancel', as: 'checkout_cancel'
   end
+
+ 
+  namespace :admin do
+    get '/dashboard', to: 'dashboard#index', as: 'dashboard'
+    resources :users, only: [:index, :show]
+    resources :events, only: [:index, :show]
+  end
+  
 end

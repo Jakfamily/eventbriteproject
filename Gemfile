@@ -83,3 +83,7 @@ gem "dotenv", "~> 2.8"
 gem "stripe", "~> 8.5"
 
 gem "activestorage", "~> 7.0"
+
+gem "administrate", "~> 0.18.0"
+
+gem "faker", "~> 2.19"

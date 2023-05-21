@@ -1,0 +1,12 @@
+<div class="event-item card mb-3">
+  <div class="card-body">
+    <h5 class="card-title"><%= event.title %></h5>
+    <p class="card-text"><strong>Date:</strong> <%= event.start_datetime.to_date %></p>
+    <p class="card-text"><strong>Location:</strong> <%= event.location %></p>
+    <!-- Add any other information you want to display for each event -->
+    <hr>
+    <% if current_user.admin? %>
+      <%= link_to "Delete Event", admin_event_path(event), method: :delete, data: { confirm: "Are you sure you want to delete this event?" }, class: "btn btn-danger" %>
+    <% end %>
+  </div>
+</div>
