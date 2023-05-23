@@ -21,9 +21,8 @@ Install my-project
   git clone git@github.com:Jakfamily/eventbriteproject.git
   cd eventbriteproject
   bundle Install
-  rails db:drop
-  rails db:create
-  rails dn:migrate
+  rails db:rake
+  rails db:migrate
   rails db:seed
   rails assets:precompile
   # creation compte pour admin 
